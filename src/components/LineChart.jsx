@@ -1,8 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { ResponsiveLine } from '@nivo/line';
-import { blue, green, grey, red, yellow } from '@mui/material/colors';
-import axios from 'axios';
+import { green, grey, yellow } from '@mui/material/colors';
 
 const Line = ({ isDashboard, casesData, deathsData, recoveredData }) => {
   const mockLineData = [

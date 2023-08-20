@@ -23,6 +23,7 @@ export const userSlice = createSlice({
           user.firstname = action.payload.firstname;
           user.lastname = action.payload.lastname;
         }
+        return null;
       });
     },
     deleteUser: (state, action) => {
@@ -35,6 +36,7 @@ export const userSlice = createSlice({
           user.firstname = action.payload.firstname;
           user.lastname = action.payload.lastname;
         }
+        return null;
       });
     },
   },

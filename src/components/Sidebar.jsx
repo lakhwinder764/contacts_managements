@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TbMapSearch, TbHome } from 'react-icons/tb';
+import { TbMapSearch } from 'react-icons/tb';
 import { BiSolidContact } from 'react-icons/bi';
 import { FaBars } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
