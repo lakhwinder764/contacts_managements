@@ -1,31 +1,22 @@
-import React from "react"; 
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import "./App.css";
-import Home from "./Home";
-import Header from "./Header";
-import { Grid } from "@mui/material";
-import ChartsAndMapPage from "./ChartsAnsMapPage";
-import Sidebar from "./Sidebar";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Home from './components/Home';
+import ChartsAndMapPage from './components/ChartsAnsMapPage';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <Router>
-    <Grid container>
-      <Grid item xs={12}> 
-      <Header />
-      </Grid>
-      <Grid item xs={1}>
-        <Sidebar />
-      </Grid>
-      <Grid item xs={11}>
-      <Routes>
-   <Route path="/" element={<Home />}/>
-   <Route path="/home" element={<ChartsAndMapPage />}/>
-      </Routes>
-   
-    </Grid>
-  </Grid>
-  </Router>
+    <>
+      <Router>
+        <Sidebar>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/maps" element={<ChartsAndMapPage />} />
+          </Routes>
+        </Sidebar>
+      </Router>
+    </>
   );
 }
 

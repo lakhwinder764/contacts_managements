@@ -5,11 +5,26 @@
      margin-right: 15px;
  }
  .infobox_cases{
-   color:red;
-   font-weight: 600;
-   font-size:1.75 rem;
+   color:grey;
+   font-weight: 900;
+   font-size:2 rem;
    margin-bottom:0.5 rem;
+   text-transform: capitalize;
  }
+ .infobox_recovered{
+  color:green;
+  font-weight: 900;
+  font-size:1.75 rem;
+  margin-bottom:0.5 rem;
+  text-transform: capitalize;
+}
+.infobox_deaths{
+  color:red;
+  font-weight: 900;
+  font-size:1.75 rem;
+  margin-bottom:0.5 rem;
+  text-transform: capitalize;
+}
  .infobox_total{
       color:#6c757d;
       font-weight:700 ;
@@ -18,3 +33,11 @@
  
  
      }
+     @media screen and (max-width: 600px) {
+      .infobox_recovered {
+        margin-top:0.5 rem;
+      }
+      .infobox_deaths{
+        margin-top:0.5 rem;
+      }
+    }     

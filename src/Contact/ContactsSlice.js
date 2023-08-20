@@ -1,19 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 // import { UsersData } from "../FakeData";
 
 export const userSlice = createSlice({
-  name: "users",
+  name: 'users',
   initialState: { value: [] },
   reducers: {
     addUser: (state, action) => {
-      state.value.push(action.payload);
+      if (
+        state?.value?.filter(
+          (item) => item.firstname === action.payload.firstname
+        )?.length === 0
+      ) {
+        state.value.push(action.payload);
+      } else {
+        return state;
+      }
     },
     getUser: (state, action) => {
       state.value.map((user) => {
         if (user.id === action.payload.id) {
           user.firstname = action.payload.firstname;
-          user.lastname= action.payload.lastname;
+          user.lastname = action.payload.lastname;
         }
       });
     },
@@ -25,12 +33,13 @@ export const userSlice = createSlice({
       state.value.map((user) => {
         if (user.id === action.payload.id) {
           user.firstname = action.payload.firstname;
-          user.lastname= action.payload.lastname;
+          user.lastname = action.payload.lastname;
         }
       });
     },
   },
 });
 
-export const { addUser, deleteUser, updateUsername, getUser } = userSlice.actions;
+export const { addUser, deleteUser, updateUsername, getUser } =
+  userSlice.actions;
 export default userSlice.reducer;
